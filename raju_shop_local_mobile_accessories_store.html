@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raju Shop | Local Mobile & Accessories Store</title>
+  <meta name="description" content="Find genuine smartphones, quality accessories, and reliable mobile repair services at Raju Shop. Trusted neighborhood store with transparent prices." />
+  
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              600: '#1d4ed8',
+              700: '#1e40af',
+              800: '#1e3a8a',
+            },
+            accent: '#0f766e',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons via CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    /* Custom scrollbar and accessibility focus ring */
+    :focus-visible {
+      outline: 2px solid #1d4ed8;
+      outline-offset: 2px;
+    }
+    .badge-soft {
+      background-color: #f1f5f9;
+      color: #334155;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-100 selection:text-blue-900">
+
+  <div class="bg-slate-900 text-slate-200 text-xs py-2 px-4 border-b border-slate-800">
+    <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center gap-4">
+        <span class="inline-flex items-center gap-1">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-blue-400"></i> Opp. City Bus Stand, Main Road
+        </span>
+        <span class="hidden sm:inline-flex items-center gap-1">
+          <i data-lucide="clock" class="w-3.5 h-3.5 text-emerald-400"></i> Open Today: 10:00 AM - 9:30 PM (All 7 Days)
+        </span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="tel:+919876543210" class="hover:text-white transition flex items-center gap-1">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-emerald-400"></i> +91 98765 43210
+        </a>
+        <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 transition flex items-center gap-1 font-medium">
+          <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> WhatsApp Chat
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo & Shop Badge -->
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-lg bg-blue-700 text-white flex items-center justify-center font-bold text-xl shadow-sm">
+          R
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="font-bold text-xl tracking-tight text-slate-900">Raju Shop</span>
+            <span class="bg-blue-50 text-blue-700 text-[10px] font-semibold uppercase px-2 py-0.5 rounded border border-blue-200">Local Mobile Store</span>
+          </div>
+          <p class="text-xs text-slate-500 font-normal">Smartphones • Accessories • Repairs</p>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center space-x-7 text-sm font-medium text-slate-700">
+        <a href="#home" class="hover:text-blue-700 transition">Home</a>
+        <a href="#phones" class="hover:text-blue-700 transition">Phones</a>
+        <a href="#accessories" class="hover:text-blue-700 transition">Accessories</a>
+        <a href="#services" class="hover:text-blue-700 transition">Services</a>
+        <a href="#why-us" class="hover:text-blue-700 transition">Why Raju Shop</a>
+        <a href="#location" class="hover:text-blue-700 transition">Contact & Visit</a>
+      </nav>
+
+      <!-- Desktop Call to Action -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href="tel:+919876543210" class="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded-lg text-sm font-medium transition shadow-sm">
+          <i data-lucide="phone-call" class="w-4 h-4"></i>
+          <span>Call Shop</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobileMenuBtn" type="button" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition" aria-label="Toggle menu">
+        <i data-lucide="menu" id="menuOpenIcon" class="w-6 h-6"></i>
+        <i data-lucide="x" id="menuCloseIcon" class="w-6 h-6 hidden"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-3">
+      <a href="#home" class="mobile-nav-link block py-2 text-slate-700 font-medium hover:text-blue-700">Home</a>
+      <a href="#phones" class="mobile-nav-link block py-2 text-slate-700 font-medium hover:text-blue-700">Phones</a>
+      <a href="#accessories" class="mobile-nav-link block py-2 text-slate-700 font-medium hover:text-blue-700">Accessories</a>
+      <a href="#services" class="mobile-nav-link block py-2 text-slate-700 font-medium hover:text-blue-700">Services</a>
+      <a href="#why-us" class="mobile-nav-link block py-2 text-slate-700 font-medium hover:text-blue-700">Why Raju Shop</a>
+      <a href="#location" class="mobile-nav-link block py-2 text-slate-700 font-medium hover:text-blue-700">Contact & Visit</a>
+      <div class="pt-3 border-t border-slate-100 flex flex-col gap-2">
+        <a href="tel:+919876543210" class="w-full text-center bg-blue-700 text-white py-2.5 rounded-lg text-sm font-medium flex items-center justify-center gap-2">
+          <i data-lucide="phone-call" class="w-4 h-4"></i> Call Shop Now
+        </a>
+        <a href="https://wa.me/919876543210" class="w-full text-center bg-emerald-600 text-white py-2.5 rounded-lg text-sm font-medium flex items-center justify-center gap-2">
+          <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp Us Directly
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="py-10 sm:py-16 bg-white border-b border-slate-200">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          <!-- Left Content -->
+          <div class="lg:col-span-7 space-y-5">
+            <div class="inline-flex items-center gap-2 bg-slate-100 text-slate-700 text-xs font-semibold px-3 py-1 rounded-full border border-slate-200">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              Authentic Local Mobile Retailer
+            </div>
+            
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-tight">
+              Raju Shop
+              <span class="block text-xl sm:text-2xl font-semibold text-blue-700 mt-1">
+                Your Local Mobile & Accessories Store
+              </span>
+            </h1>
+
+            <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl">
+              Find smartphones, accessories and reliable mobile services at Raju Shop. Get genuine box-pack models, transparent rates, honest budget advice, and on-the-spot repair assistance right in your neighborhood.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <a href="#phones" class="inline-flex items-center justify-center gap-2 bg-blue-700 hover:bg-blue-800 text-white font-medium px-6 py-3 rounded-lg transition shadow-sm text-sm">
+                <span>View Phones</span>
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </a>
+              <a href="#location" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 font-medium px-6 py-3 rounded-lg border border-slate-300 transition text-sm">
+                <i data-lucide="map-pin" class="w-4 h-4 text-slate-600"></i>
+                <span>Contact Us</span>
+              </a>
+            </div>
+
+            <!-- Key Trust Badges - Grounded & Realistic -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-4 border-t border-slate-100">
+              <div class="flex items-center gap-2 text-xs font-medium text-slate-700">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-700 shrink-0"></i>
+                <span>100% Genuine Box Pack</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs font-medium text-slate-700">
+                <i data-lucide="shield-check" class="w-4 h-4 text-blue-700 shrink-0"></i>
+                <span>Official Brand Warranty</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs font-medium text-slate-700">
+                <i data-lucide="wrench" class="w-4 h-4 text-blue-700 shrink-0"></i>
+                <span>Same-Day Repair Service</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Image: Realistic clean phone presentation -->
+          <div class="lg:col-span-5">
+            <div class="relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 shadow-sm">
+              <img 
+                src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=900&q=80" 
+                alt="Smartphones and accessories counter at Raju Shop" 
+                class="w-full h-72 sm:h-96 object-cover object-center"
+                onerror="this.src='https://placehold.co/800x600/1e3a8a/ffffff?text=Raju+Shop+Showroom'"
+              />
+              <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950/80 via-slate-900/40 to-transparent p-4 text-white">
+                <p class="text-xs uppercase tracking-wider text-slate-300 font-medium">In-Store Experience</p>
+                <p class="text-sm font-semibold">Live display units available for hands-on trial</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="phones" class="py-12 sm:py-16 bg-slate-50 border-b border-slate-200">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+          <div>
+            <div class="text-xs uppercase tracking-wider font-semibold text-blue-700 mb-1">Available In Store</div>
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Popular Smartphones</h2>
+            <p class="text-sm text-slate-600 mt-1 max-w-xl">
+              Browse current popular models across popular brands. Inquire with us for today's best offline counter deal.
+            </p>
+          </div>
+          <div class="text-xs text-slate-500 bg-slate-100 border border-slate-200 px-3 py-1.5 rounded-lg">
+            *Prices shown are sample/demo retail rates. Visit shop for active card offers.
+          </div>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap gap-2 mb-8" id="filterContainer">
+          <button class="filter-btn active-filter px-4 py-2 text-xs font-semibold rounded-lg border border-blue-700 bg-blue-700 text-white transition" data-brand="all">All Brands</button>
+          <button class="filter-btn px-4 py-2 text-xs font-medium rounded-lg border border-slate-300 bg-white text-slate-700 hover:bg-slate-100 transition" data-brand="samsung">Samsung</button>
+          <button class="filter-btn px-4 py-2 text-xs font-medium rounded-lg border border-slate-300 bg-white text-slate-700 hover:bg-slate-100 transition" data-brand="redmi">Xiaomi / Redmi</button>
+          <button class="filter-btn px-4 py-2 text-xs font-medium rounded-lg border border-slate-300 bg-white text-slate-700 hover:bg-slate-100 transition" data-brand="realme">Realme</button>
+          <button class="filter-btn px-4 py-2 text-xs font-medium rounded-lg border border-slate-300 bg-white text-slate-700 hover:bg-slate-100 transition" data-brand="vivo">Vivo</button>
+          <button class="filter-btn px-4 py-2 text-xs font-medium rounded-lg border border-slate-300 bg-white text-slate-700 hover:bg-slate-100 transition" data-brand="apple">Apple</button>
+        </div>
+
+        <!-- Product Cards Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="productGrid">
+          
+          <!-- Product 1: Samsung -->
+          <div class="product-card bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:border-blue-400 transition" data-brand="samsung">
+            <div class="h-48 bg-slate-100 relative p-4 flex items-center justify-center overflow-hidden">
+              <span class="absolute top-3 left-3 bg-blue-100 text-blue-800 text-[10px] font-bold px-2 py-0.5 rounded">Popular Choice</span>
+              <img 
+                src="https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?auto=format&fit=crop&w=500&q=80" 
+                alt="Samsung Galaxy M35 5G" 
+                class="h-40 w-auto object-contain hover:scale-105 transition-transform duration-200"
+                onerror="this.src='https://placehold.co/400x300/f1f5f9/1e293b?text=Samsung+Phone'"
+              />
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <p class="text-xs font-medium text-slate-500 uppercase tracking-wide">Samsung</p>
+                <h3 class="text-base font-bold text-slate-900 mt-0.5">Galaxy M35 5G</h3>
+                <ul class="text-xs text-slate-600 mt-3 space-y-1.5">
+                  <li class="flex items-center gap-1.5"><i data-lucide="cpu" class="w-3.5 h-3.5 text-slate-400"></i> Exynos 1380 • 6GB/128GB</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="camera" class="w-3.5 h-3.5 text-slate-400"></i> 50MP OIS Camera</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="battery" class="w-3.5 h-3.5 text-slate-400"></i> 6000 mAh Monster Battery</li>
+                </ul>
+              </div>
+              <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                <div>
+                  <span class="text-[10px] text-slate-400 uppercase font-medium">Estimated Price</span>
+                  <p class="text-lg font-bold text-slate-900">₹16,499</p>
+                </div>
+                <button onclick="openEnquiryModal('Samsung Galaxy M35 5G', '₹16,499')" class="inline-flex items-center gap-1.5 bg-blue-50 hover:bg-blue-100 text-blue-700 font-semibold px-3.5 py-2 rounded-lg text-xs transition border border-blue-200">
+                  <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+                  Enquire Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2: Redmi -->
+          <div class="product-card bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:border-blue-400 transition" data-brand="redmi">
+            <div class="h-48 bg-slate-100 relative p-4 flex items-center justify-center overflow-hidden">
+              <span class="absolute top-3 left-3 bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded">In Stock</span>
+              <img 
+                src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=500&q=80" 
+                alt="Redmi Note 13 5G" 
+                class="h-40 w-auto object-contain hover:scale-105 transition-transform duration-200"
+                onerror="this.src='https://placehold.co/400x300/f1f5f9/1e293b?text=Redmi+Note+13'"
+              />
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <p class="text-xs font-medium text-slate-500 uppercase tracking-wide">Xiaomi / Redmi</p>
+                <h3 class="text-base font-bold text-slate-900 mt-0.5">Redmi Note 13 5G</h3>
+                <ul class="text-xs text-slate-600 mt-3 space-y-1.5">
+                  <li class="flex items-center gap-1.5"><i data-lucide="cpu" class="w-3.5 h-3.5 text-slate-400"></i> Dimensity 6080 • 8GB/256GB</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="camera" class="w-3.5 h-3.5 text-slate-400"></i> 108MP Ultra-Clear Camera</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="battery" class="w-3.5 h-3.5 text-slate-400"></i> 5000 mAh • 33W Fast Charge</li>
+                </ul>
+              </div>
+              <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                <div>
+                  <span class="text-[10px] text-slate-400 uppercase font-medium">Estimated Price</span>
+                  <p class="text-lg font-bold text-slate-900">₹17,999</p>
+                </div>
+                <button onclick="openEnquiryModal('Redmi Note 13 5G', '₹17,999')" class="inline-flex items-center gap-1.5 bg-blue-50 hover:bg-blue-100 text-blue-700 font-semibold px-3.5 py-2 rounded-lg text-xs transition border border-blue-200">
+                  <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+                  Enquire Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3: Realme -->
+          <div class="product-card bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:border-blue-400 transition" data-brand="realme">
+            <div class="h-48 bg-slate-100 relative p-4 flex items-center justify-center overflow-hidden">
+              <span class="absolute top-3 left-3 bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-0.5 rounded">Fast Seller</span>
+              <img 
+                src="https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=500&q=80" 
+                alt="Realme 12 Pro 5G" 
+                class="h-40 w-auto object-contain hover:scale-105 transition-transform duration-200"
+                onerror="this.src='https://placehold.co/400x300/f1f5f9/1e293b?text=Realme+Phone'"
+              />
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <p class="text-xs font-medium text-slate-500 uppercase tracking-wide">Realme</p>
+                <h3 class="text-base font-bold text-slate-900 mt-0.5">Realme 12 Pro 5G</h3>
+                <ul class="text-xs text-slate-600 mt-3 space-y-1.5">
+                  <li class="flex items-center gap-1.5"><i data-lucide="cpu" class="w-3.5 h-3.5 text-slate-400"></i> Snapdragon 6 Gen 1 • 8GB/128GB</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="camera" class="w-3.5 h-3.5 text-slate-400"></i> 32MP Telephoto Portrait</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="zap" class="w-3.5 h-3.5 text-slate-400"></i> 67W SuperVOOC Charge</li>
+                </ul>
+              </div>
+              <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                <div>
+                  <span class="text-[10px] text-slate-400 uppercase font-medium">Estimated Price</span>
+                  <p class="text-lg font-bold text-slate-900">₹23,999</p>
+                </div>
+                <button onclick="openEnquiryModal('Realme 12 Pro 5G', '₹23,999')" class="inline-flex items-center gap-1.5 bg-blue-50 hover:bg-blue-100 text-blue-700 font-semibold px-3.5 py-2 rounded-lg text-xs transition border border-blue-200">
+                  <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+                  Enquire Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 4: Vivo -->
+          <div class="product-card bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:border-blue-400 transition" data-brand="vivo">
+            <div class="h-48 bg-slate-100 relative p-4 flex items-center justify-center overflow-hidden">
+              <span class="absolute top-3 left-3 bg-blue-100 text-blue-800 text-[10px] font-bold px-2 py-0.5 rounded">Great Camera</span>
+              <img 
+                src="https://images.unsplash.com/photo-1565849904461-04a58ad377e0?auto=format&fit=crop&w=500&q=80" 
+                alt="Vivo T3 5G" 
+                class="h-40 w-auto object-contain hover:scale-105 transition-transform duration-200"
+                onerror="this.src='https://placehold.co/400x300/f1f5f9/1e293b?text=Vivo+T3'"
+              />
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <p class="text-xs font-medium text-slate-500 uppercase tracking-wide">Vivo</p>
+                <h3 class="text-base font-bold text-slate-900 mt-0.5">Vivo T3 5G</h3>
+                <ul class="text-xs text-slate-600 mt-3 space-y-1.5">
+                  <li class="flex items-center gap-1.5"><i data-lucide="cpu" class="w-3.5 h-3.5 text-slate-400"></i> Dimensity 7200 • 8GB/128GB</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="camera" class="w-3.5 h-3.5 text-slate-400"></i> 50MP Sony IMX882 OIS</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="tv" class="w-3.5 h-3.5 text-slate-400"></i> 120Hz AMOLED Screen</li>
+                </ul>
+              </div>
+              <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                <div>
+                  <span class="text-[10px] text-slate-400 uppercase font-medium">Estimated Price</span>
+                  <p class="text-lg font-bold text-slate-900">₹19,999</p>
+                </div>
+                <button onclick="openEnquiryModal('Vivo T3 5G', '₹19,999')" class="inline-flex items-center gap-1.5 bg-blue-50 hover:bg-blue-100 text-blue-700 font-semibold px-3.5 py-2 rounded-lg text-xs transition border border-blue-200">
+                  <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+                  Enquire Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 5: Apple iPhone -->
+          <div class="product-card bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:border-blue-400 transition" data-brand="apple">
+            <div class="h-48 bg-slate-100 relative p-4 flex items-center justify-center overflow-hidden">
+              <span class="absolute top-3 left-3 bg-slate-900 text-white text-[10px] font-bold px-2 py-0.5 rounded">Sealed Pack</span>
+              <img 
+                src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=500&q=80" 
+                alt="Apple iPhone 15" 
+                class="h-40 w-auto object-contain hover:scale-105 transition-transform duration-200"
+                onerror="this.src='https://placehold.co/400x300/f1f5f9/1e293b?text=iPhone+15'"
+              />
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <p class="text-xs font-medium text-slate-500 uppercase tracking-wide">Apple</p>
+                <h3 class="text-base font-bold text-slate-900 mt-0.5">iPhone 15 (128 GB)</h3>
+                <ul class="text-xs text-slate-600 mt-3 space-y-1.5">
+                  <li class="flex items-center gap-1.5"><i data-lucide="cpu" class="w-3.5 h-3.5 text-slate-400"></i> A16 Bionic Chip</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="camera" class="w-3.5 h-3.5 text-slate-400"></i> 48MP Advanced Dual Camera</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="smartphone" class="w-3.5 h-3.5 text-slate-400"></i> Dynamic Island & USB-C</li>
+                </ul>
+              </div>
+              <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                <div>
+                  <span class="text-[10px] text-slate-400 uppercase font-medium">Estimated Price</span>
+                  <p class="text-lg font-bold text-slate-900">₹69,900</p>
+                </div>
+                <button onclick="openEnquiryModal('Apple iPhone 15 (128 GB)', '₹69,900')" class="inline-flex items-center gap-1.5 bg-blue-50 hover:bg-blue-100 text-blue-700 font-semibold px-3.5 py-2 rounded-lg text-xs transition border border-blue-200">
+                  <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+                  Enquire Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 6: Samsung Budget -->
+          <div class="product-card bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:border-blue-400 transition" data-brand="samsung">
+            <div class="h-48 bg-slate-100 relative p-4 flex items-center justify-center overflow-hidden">
+              <span class="absolute top-3 left-3 bg-slate-200 text-slate-800 text-[10px] font-bold px-2 py-0.5 rounded">Budget Friendly</span>
+              <img 
+                src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80" 
+                alt="Samsung Galaxy A15 5G" 
+                class="h-40 w-auto object-contain hover:scale-105 transition-transform duration-200"
+                onerror="this.src='https://placehold.co/400x300/f1f5f9/1e293b?text=Samsung+A15'"
+              />
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <p class="text-xs font-medium text-slate-500 uppercase tracking-wide">Samsung</p>
+                <h3 class="text-base font-bold text-slate-900 mt-0.5">Galaxy A15 5G</h3>
+                <ul class="text-xs text-slate-600 mt-3 space-y-1.5">
+                  <li class="flex items-center gap-1.5"><i data-lucide="cpu" class="w-3.5 h-3.5 text-slate-400"></i> Dimensity 6100+ • 6GB/128GB</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="camera" class="w-3.5 h-3.5 text-slate-400"></i> 50MP Triple Camera</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="tv" class="w-3.5 h-3.5 text-slate-400"></i> Super AMOLED 90Hz</li>
+                </ul>
+              </div>
+              <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                <div>
+                  <span class="text-[10px] text-slate-400 uppercase font-medium">Estimated Price</span>
+                  <p class="text-lg font-bold text-slate-900">₹14,499</p>
+                </div>
+                <button onclick="openEnquiryModal('Samsung Galaxy A15 5G', '₹14,499')" class="inline-flex items-center gap-1.5 bg-blue-50 hover:bg-blue-100 text-blue-700 font-semibold px-3.5 py-2 rounded-lg text-xs transition border border-blue-200">
+                  <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+                  Enquire Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mt-8 p-4 rounded-xl bg-white border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center shrink-0">
+              <i data-lucide="help-circle" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-slate-900">Looking for a different phone or specific variant?</p>
+              <p class="text-xs text-slate-500">We arrange all OnePlus, Motorola, Poco, and Google Pixel models on pre-order within 24 hours.</p>
+            </div>
+          </div>
+          <a href="https://wa.me/919876543210?text=Hello%20Raju%20Shop,%20I%20am%20looking%20for%20a%20specific%20phone%20model" target="_blank" rel="noopener noreferrer" class="shrink-0 inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold px-4 py-2.5 rounded-lg transition">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            Ask on WhatsApp
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="accessories" class="py-12 sm:py-16 bg-white border-b border-slate-200">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="max-w-xl mb-10">
+          <div class="text-xs uppercase tracking-wider font-semibold text-blue-700 mb-1">Quality Guaranteed</div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Mobile Accessories</h2>
+          <p class="text-sm text-slate-600 mt-1">
+            Genuine brand chargers, durable cases, premium tempered glasses, and audio gear tested for durability.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          
+          <div class="bg-slate-50 rounded-xl p-4 border border-slate-200 hover:border-blue-400 transition text-center flex flex-col items-center">
+            <div class="w-12 h-12 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center mb-3">
+              <i data-lucide="shield" class="w-6 h-6"></i>
+            </div>
+            <h4 class="font-semibold text-sm text-slate-900">Tempered Glass</h4>
+            <p class="text-xs text-slate-500 mt-1">11D, Matte, UV & Privacy glasses applied on spot</p>
+            <span class="mt-3 text-[11px] font-bold text-slate-700">From ₹99</span>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-4 border border-slate-200 hover:border-blue-400 transition text-center flex flex-col items-center">
+            <div class="w-12 h-12 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center mb-3">
+              <i data-lucide="smartphone" class="w-6 h-6"></i>
+            </div>
+            <h4 class="font-semibold text-sm text-slate-900">Back Covers</h4>
+            <p class="text-xs text-slate-500 mt-1">Silicone, rugged armor, and transparent smoke cases</p>
+            <span class="mt-3 text-[11px] font-bold text-slate-700">From ₹149</span>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-4 border border-slate-200 hover:border-blue-400 transition text-center flex flex-col items-center">
+            <div class="w-12 h-12 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center mb-3">
+              <i data-lucide="zap" class="w-6 h-6"></i>
+            </div>
+            <h4 class="font-semibold text-sm text-slate-900">Fast Chargers</h4>
+            <p class="text-xs text-slate-500 mt-1">20W, 33W, 67W, 80W Type-C original adapters</p>
+            <span class="mt-3 text-[11px] font-bold text-slate-700">From ₹399</span>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-4 border border-slate-200 hover:border-blue-400 transition text-center flex flex-col items-center">
+            <div class="w-12 h-12 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center mb-3">
+              <i data-lucide="headphones" class="w-6 h-6"></i>
+            </div>
+            <h4 class="font-semibold text-sm text-slate-900">Earbuds & Neckbands</h4>
+            <p class="text-xs text-slate-500 mt-1">boAt, Noise, Realme & OnePlus audio accessories</p>
+            <span class="mt-3 text-[11px] font-bold text-slate-700">From ₹799</span>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-4 border border-slate-200 hover:border-blue-400 transition text-center flex flex-col items-center col-span-2 sm:col-span-1">
+            <div class="w-12 h-12 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center mb-3">
+              <i data-lucide="battery-charging" class="w-6 h-6"></i>
+            </div>
+            <h4 class="font-semibold text-sm text-slate-900">Power Banks & Cables</h4>
+            <p class="text-xs text-slate-500 mt-1">10,000 & 20,000mAh units + braided heavy cables</p>
+            <span class="mt-3 text-[11px] font-bold text-slate-700">From ₹199</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="py-12 sm:py-16 bg-slate-50 border-b border-slate-200">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <div class="max-w-2xl mb-10">
+          <div class="text-xs uppercase tracking-wider font-semibold text-blue-700 mb-1">Local Repair & Support</div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Services at Raju Shop</h2>
+          <p class="text-sm text-slate-600 mt-1">
+            We handle quick repairs, display fixes, and device setup right in front of you. No months of waiting or high service center charges.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Service 1 -->
+          <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm flex gap-4">
+            <div class="w-11 h-11 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center shrink-0">
+              <i data-lucide="wrench" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-base text-slate-900">Mobile Repair</h3>
+              <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                Charging jack replacement, speaker/mic repair, water damage cleaning, and battery replacements with warranty.
+              </p>
+              <div class="mt-3 inline-flex items-center text-[11px] font-semibold text-blue-700">
+                <span>Fast diagnosis in 15 mins</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm flex gap-4">
+            <div class="w-11 h-11 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center shrink-0">
+              <i data-lucide="tv" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-base text-slate-900">Screen Replacement</h3>
+              <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                Broken phone glass or touch not working? We provide both original OLED folders and budget-friendly A-grade displays.
+              </p>
+              <div class="mt-3 inline-flex items-center text-[11px] font-semibold text-blue-700">
+                <span>Touch testing warranty included</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm flex gap-4">
+            <div class="w-11 h-11 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center shrink-0">
+              <i data-lucide="package-check" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-base text-slate-900">Accessories Fitting</h3>
+              <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                Bubble-free machine-cut screen protector installation, camera lens protectors, and shock-resistant skin wraps.
+              </p>
+              <div class="mt-3 inline-flex items-center text-[11px] font-semibold text-blue-700">
+                <span>Free installation on any purchase</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm flex gap-4">
+            <div class="w-11 h-11 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center shrink-0">
+              <i data-lucide="settings" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-base text-slate-900">Software / Setup</h3>
+              <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                New phone initial setup, Google Account/Gmail setup, OS updates, boot loop fixes, and safe virus cleanup.
+              </p>
+              <div class="mt-3 inline-flex items-center text-[11px] font-semibold text-blue-700">
+                <span>Helpful guidance for senior citizens</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 5 -->
+          <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm flex gap-4">
+            <div class="w-11 h-11 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center shrink-0">
+              <i data-lucide="arrow-left-right" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-base text-slate-900">Data Transfer</h3>
+              <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                Seamless transfer of contacts, WhatsApp chats, photos, and messages from your old phone to your new phone without loss.
+              </p>
+              <div class="mt-3 inline-flex items-center text-[11px] font-semibold text-blue-700">
+                <span>Android to iPhone & vice-versa</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 6 / Exchange -->
+          <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm flex gap-4">
+            <div class="w-11 h-11 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center shrink-0">
+              <i data-lucide="refresh-cw" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-base text-slate-900">Old Phone Exchange</h3>
+              <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                Bring your working old phone and get an instant on-the-spot valuation to reduce the price of your new smartphone purchase.
+              </p>
+              <div class="mt-3 inline-flex items-center text-[11px] font-semibold text-blue-700">
+                <span>Valid ID proof required for exchange</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="why-us" class="py-12 sm:py-16 bg-white border-b border-slate-200">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <div class="max-w-xl mb-10">
+          <div class="text-xs uppercase tracking-wider font-semibold text-blue-700 mb-1">Honest & Practical</div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Why Raju Shop?</h2>
+          <p class="text-sm text-slate-600 mt-1">
+            We are a local family-run shop serving our community with reliable mobile products and honest advice.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/50">
+            <div class="w-9 h-9 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center mb-3">
+              <i data-lucide="badge-check" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base">Genuine Products</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Every phone sold is 100% brand sealed pack with official brand warranty and a proper GST invoice. No refurbished units sold as new.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/50">
+            <div class="w-9 h-9 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center mb-3">
+              <i data-lucide="heart-handshake" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base">Helpful Service</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              We help you choose the right phone according to your budget and everyday use, rather than pushing whatever has the highest margin.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/50">
+            <div class="w-9 h-9 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center mb-3">
+              <i data-lucide="users" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base">Local & Trusted</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              You know where to find us. If you encounter any issue with setup or usage, simply walk into our shop anytime for assistance.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/50">
+            <div class="w-9 h-9 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center mb-3">
+              <i data-lucide="tag" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base">Affordable Prices</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Competitive offline market rates that match or beat online prices once you count complimentary screen guards and back covers.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="location" class="py-12 sm:py-16 bg-slate-50 border-b border-slate-200">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-center max-w-xl mx-auto mb-12">
+          <div class="text-xs uppercase tracking-wider font-semibold text-blue-700 mb-1">Reach Our Counter</div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Visit Raju Shop</h2>
+          <p class="text-sm text-slate-600 mt-1">
+            Drop by our shop for hands-on trial, tempered glass installation, or phone queries.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Shop Details and Hours -->
+          <div class="lg:col-span-5 space-y-6">
+            
+            <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm space-y-5">
+              
+              <!-- Address -->
+              <div class="flex items-start gap-3.5">
+                <div class="w-9 h-9 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center shrink-0 mt-0.5">
+                  <i data-lucide="map-pin" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-sm text-slate-900">Shop Address</h4>
+                  <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                    Shop No. 4, Market Complex,<br />
+                    Opposite City Bus Stand, Main Road,<br />
+                    Near Central Post Office
+                  </p>
+                </div>
+              </div>
+
+              <!-- Hours -->
+              <div class="flex items-start gap-3.5 pt-4 border-t border-slate-100">
+                <div class="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
+                  <i data-lucide="clock" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-sm text-slate-900">Opening Hours</h4>
+                  <p class="text-xs text-slate-600 mt-1">
+                    <span class="font-medium text-slate-800">Monday to Sunday:</span> 10:00 AM – 9:30 PM<br />
+                    <span class="text-emerald-600 font-medium">Open all 7 days of the week</span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Phone Numbers -->
+              <div class="flex items-start gap-3.5 pt-4 border-t border-slate-100">
+                <div class="w-9 h-9 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center shrink-0 mt-0.5">
+                  <i data-lucide="phone" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-sm text-slate-900">Phone Numbers</h4>
+                  <p class="text-xs text-slate-600 mt-1">
+                    <a href="tel:+919876543210" class="hover:text-blue-700 font-medium">+91 98765 43210</a> (Raju Bhai)<br />
+                    <a href="tel:+919812345678" class="hover:text-blue-700 font-medium">+91 98123 45678</a> (Shop Counter)
+                  </p>
+                </div>
+              </div>
+
+              <!-- WhatsApp Quick Action Button -->
+              <div class="pt-2">
+                <a 
+                  href="https://wa.me/919876543210?text=Namaste%20Raju%20Shop,%20I%20want%20to%20inquire%20about%20a%20mobile%20phone/service" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="w-full inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold py-3 px-4 rounded-lg transition shadow-sm"
+                >
+                  <i data-lucide="message-circle" class="w-4 h-4"></i>
+                  <span>Message Us on WhatsApp</span>
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Google Map Embed Placeholder with Realistic Market Pin -->
+            <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
+              <div class="p-3 bg-slate-100 border-b border-slate-200 text-xs font-semibold text-slate-700 flex items-center justify-between">
+                <span>Store Location Map</span>
+                <span class="text-[11px] text-slate-500">Main Road Complex</span>
+              </div>
+              <div class="relative w-full h-56 bg-slate-200">
+                <iframe 
+                  title="Raju Shop Location Map"
+                  class="w-full h-full border-0"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14686.20815456209!2d85.358231!3d23.992523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f49c0d6cf50953%3A0xe5567b57b77df230!2sMain%20Road%20Market!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Quick Enquiry / Callback Form -->
+          <div class="lg:col-span-7">
+            <div class="bg-white rounded-xl border border-slate-200 p-6 sm:p-8 shadow-sm">
+              <h3 class="text-lg font-bold text-slate-900">Send an Enquiry to Raju Shop</h3>
+              <p class="text-xs text-slate-600 mt-1">Have a question about price, screen replacement, or stock? Send a quick message and we will call or text you back.</p>
+
+              <form id="contactForm" class="mt-6 space-y-4">
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="userName" class="block text-xs font-semibold text-slate-700 mb-1.5">Your Name *</label>
+                    <input 
+                      type="text" 
+                      id="userName" 
+                      required 
+                      placeholder="e.g. Amit Kumar" 
+                      class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:border-blue-600 focus:outline-none transition"
+                    />
+                  </div>
+
+                  <div>
+                    <label for="userPhone" class="block text-xs font-semibold text-slate-700 mb-1.5">Mobile Number *</label>
+                    <input 
+                      type="tel" 
+                      id="userPhone" 
+                      required 
+                      placeholder="e.g. 9876543210" 
+                      class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:border-blue-600 focus:outline-none transition"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label for="enquiryType" class="block text-xs font-semibold text-slate-700 mb-1.5">What are you looking for?</label>
+                  <select 
+                    id="enquiryType" 
+                    class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:border-blue-600 focus:outline-none transition bg-white"
+                  >
+                    <option value="New Smartphone">New Smartphone Purchase</option>
+                    <option value="Mobile Screen/Repair">Mobile Screen or Hardware Repair</option>
+                    <option value="Accessories">Accessories (Charger, Case, Glass, Earbuds)</option>
+                    <option value="Old Phone Exchange">Old Phone Exchange Valuation</option>
+                    <option value="General Query">General Question</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="userMessage" class="block text-xs font-semibold text-slate-700 mb-1.5">Message / Phone Model</label>
+                  <textarea 
+                    id="userMessage" 
+                    rows="3" 
+                    placeholder="e.g., Is Redmi Note 13 8GB variant available today? Or my Samsung display cracked." 
+                    class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:border-blue-600 focus:outline-none transition"
+                  ></textarea>
+                </div>
+
+                <div class="pt-2 flex flex-col sm:flex-row items-center gap-3">
+                  <button 
+                    type="submit" 
+                    class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-blue-700 hover:bg-blue-800 text-white text-sm font-semibold py-2.5 px-6 rounded-lg transition shadow-sm"
+                  >
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                    <span>Send Message</span>
+                  </button>
+                  <span class="text-[11px] text-slate-500">We usually respond within 30 minutes during shop hours.</span>
+                </div>
+
+                <!-- Form status feedback placeholder -->
+                <div id="formSuccessMessage" class="hidden p-3 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-medium">
+                  Thank you! Your enquiry has been recorded. We will call or WhatsApp you shortly.
+                </div>
+
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 text-xs py-12 border-t border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        
+        <!-- Col 1: Brand Info -->
+        <div class="space-y-3 md:col-span-1">
+          <div class="flex items-center gap-2 text-white font-bold text-base">
+            <span class="w-6 h-6 rounded bg-blue-600 flex items-center justify-center text-xs">R</span>
+            Raju Shop
+          </div>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            Mobile Phones • Accessories • Services.<br />
+            Your trusted local offline mobile destination.
+          </p>
+          <p class="text-[11px] text-slate-500">
+            GST Registered • Authorized Dealer Products
+          </p>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div>
+          <h4 class="text-slate-200 font-semibold text-xs uppercase tracking-wider mb-3">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#home" class="hover:text-white transition">Home</a></li>
+            <li><a href="#phones" class="hover:text-white transition">Smartphones</a></li>
+            <li><a href="#accessories" class="hover:text-white transition">Cases & Chargers</a></li>
+            <li><a href="#services" class="hover:text-white transition">Repair Services</a></li>
+            <li><a href="#location" class="hover:text-white transition">Store Location</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Popular Services -->
+        <div>
+          <h4 class="text-slate-200 font-semibold text-xs uppercase tracking-wider mb-3">Shop Services</h4>
+          <ul class="space-y-2">
+            <li>Display & Touch Glass Replacement</li>
+            <li>Original Fast Chargers & Cables</li>
+            <li>Tempered Glass Installation</li>
+            <li>WhatsApp Data & Contact Transfer</li>
+            <li>Used Phone Fair Valuation</li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Store Contact Info -->
+        <div>
+          <h4 class="text-slate-200 font-semibold text-xs uppercase tracking-wider mb-3">Direct Contact</h4>
+          <p class="text-slate-300">Shop No. 4, Market Complex</p>
+          <p class="text-slate-300">Opp. City Bus Stand, Main Road</p>
+          <p class="mt-2 text-white font-medium">Call: +91 98765 43210</p>
+          <p class="text-emerald-400 font-medium">WhatsApp: +91 98765 43210</p>
+          
+          <div class="mt-4 flex items-center gap-3 text-slate-400">
+            <span class="text-[11px]">Follow updates:</span>
+            <a href="#" class="hover:text-white transition" aria-label="Facebook"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+            <a href="#" class="hover:text-white transition" aria-label="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-slate-500 text-[11px]">
+        <p>© Raju Shop. All rights reserved. Locally owned & operated store.</p>
+        <p>All brand logos and model names belong to their respective trademarks.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="enquiryModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-xl border border-slate-200 relative">
+      
+      <!-- Close Button -->
+      <button onclick="closeEnquiryModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-1 rounded-lg">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Modal Header -->
+      <div class="flex items-center gap-2.5 mb-4">
+        <div class="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center">
+          <i data-lucide="smartphone" class="w-4 h-4"></i>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-slate-900" id="modalPhoneTitle">Inquire About Phone</h3>
+          <p class="text-xs text-slate-500" id="modalPhonePrice">Estimated Price: ₹0</p>
+        </div>
+      </div>
+
+      <p class="text-xs text-slate-600 mb-5 leading-relaxed">
+        Connect directly with Raju Shop on WhatsApp to verify today's color availability, exchange discounts, and box-pack warranty.
+      </p>
+
+      <!-- Options -->
+      <div class="space-y-3">
+        <a 
+          id="modalWhatsAppBtn" 
+          href="#" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="w-full inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold py-2.5 px-4 rounded-lg transition"
+        >
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span>Ask on WhatsApp Directly</span>
+        </a>
+
+        <a 
+          href="tel:+919876543210" 
+          class="w-full inline-flex items-center justify-center gap-2 bg-blue-700 hover:bg-blue-800 text-white text-sm font-semibold py-2.5 px-4 rounded-lg transition"
+        >
+          <i data-lucide="phone-call" class="w-4 h-4"></i>
+          <span>Call Raju Shop (+91 98765 43210)</span>
+        </a>
+
+        <button 
+          onclick="closeEnquiryModal()" 
+          type="button" 
+          class="w-full py-2 text-xs font-medium text-slate-500 hover:text-slate-700 transition text-center"
+        >
+          Close Window
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Mobile Navigation Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuOpenIcon = document.getElementById('menuOpenIcon');
+    const menuCloseIcon = document.getElementById('menuCloseIcon');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.toggle('hidden');
+      if (isHidden) {
+        menuOpenIcon.classList.remove('hidden');
+        menuCloseIcon.classList.add('hidden');
+      } else {
+        menuOpenIcon.classList.add('hidden');
+        menuCloseIcon.classList.remove('hidden');
+      }
+    });
+
+    // Close mobile menu when clicking nav links
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuOpenIcon.classList.remove('hidden');
+        menuCloseIcon.classList.add('hidden');
+      });
+    });
+
+    // Product Category Filter Functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Toggle active button style
+        filterButtons.forEach(btn => {
+          btn.classList.remove('bg-blue-700', 'text-white', 'border-blue-700');
+          btn.classList.add('bg-white', 'text-slate-700', 'border-slate-300');
+        });
+        button.classList.remove('bg-white', 'text-slate-700', 'border-slate-300');
+        button.classList.add('bg-blue-700', 'text-white', 'border-blue-700');
+
+        const selectedBrand = button.getAttribute('data-brand');
+
+        productCards.forEach(card => {
+          const cardBrand = card.getAttribute('data-brand');
+          if (selectedBrand === 'all' || cardBrand === selectedBrand) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Modal Handling
+    const enquiryModal = document.getElementById('enquiryModal');
+    const modalPhoneTitle = document.getElementById('modalPhoneTitle');
+    const modalPhonePrice = document.getElementById('modalPhonePrice');
+    const modalWhatsAppBtn = document.getElementById('modalWhatsAppBtn');
+
+    function openEnquiryModal(modelName, price) {
+      modalPhoneTitle.textContent = modelName;
+      modalPhonePrice.textContent = 'Approx Showroom Price: ' + price;
+      
+      const cleanMsg = encodeURIComponent(`Namaste Raju Shop, I saw ${modelName} (${price}) on your website. Is it available in stock today?`);
+      modalWhatsAppBtn.href = `https://wa.me/919876543210?text=${cleanMsg}`;
+
+      enquiryModal.classList.remove('hidden');
+      enquiryModal.classList.add('flex');
+    }
+
+    function closeEnquiryModal() {
+      enquiryModal.classList.add('hidden');
+      enquiryModal.classList.remove('flex');
+    }
+
+    // Close modal on click outside backdrop
+    window.addEventListener('click', (e) => {
+      if (e.target === enquiryModal) {
+        closeEnquiryModal();
+      }
+    });
+
+    // Handle Contact Form Submission
+    const contactForm = document.getElementById('contactForm');
+    const formSuccessMessage = document.getElementById('formSuccessMessage');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // Show realistic success notification in place of any alert
+      formSuccessMessage.classList.remove('hidden');
+      contactForm.reset();
+      setTimeout(() => {
+        formSuccessMessage.classList.add('hidden');
+      }, 6000);
+    });
+  </script>
+</body>
+</html>
